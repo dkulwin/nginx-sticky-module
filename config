@@ -2,7 +2,7 @@ ngx_addon_name=ngx_http_sticky_module
 
 STICKY_SRCS="                                                               \
         $ngx_addon_dir/ngx_http_sticky_module.c                             \
-        $ngx_addon_dir/ngx_http_sticky_misc.c"                              \
+        $ngx_addon_dir/ngx_http_sticky_misc.c                               \
         "
 
 STICKY_DEPS="                                                               \
