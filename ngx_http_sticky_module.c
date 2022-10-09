@@ -722,7 +722,7 @@ static char *ngx_http_sticky_set(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
  */
 static void *ngx_http_sticky_create_conf(ngx_conf_t *cf)
 {
-    ngx_conf_log_error(NGX_LOG_INFO, cf->log, 0,
+    ngx_conf_log_error(NGX_LOG_INFO, cf, 0,
                            "ngx_http_sticky_create_conf");
 
 	ngx_http_sticky_srv_conf_t *conf = ngx_pcalloc(cf->pool, sizeof(ngx_http_sticky_srv_conf_t));
