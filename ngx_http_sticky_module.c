@@ -183,8 +183,6 @@ static ngx_int_t ngx_http_init_sticky_peer(ngx_http_request_t *r, ngx_http_upstr
 	ngx_int_t                     n;
 	ngx_table_elt_t				 *cookie;
 
-    ngx_conf_log_error(NGX_LOG_INFO, r->connection->log, 0,
-                           "ngx_http_init_sticky_peer");
 
 	/* alloc custom sticky struct */
 	iphp = ngx_palloc(r->pool, sizeof(ngx_http_sticky_peer_data_t));
@@ -283,8 +281,7 @@ static ngx_int_t ngx_http_get_sticky_peer(ngx_peer_connection_t *pc, void *data)
 	ngx_http_upstream_rr_peer_t  *peer = NULL;
 
 
-    ngx_conf_log_error(NGX_LOG_INFO, pc->log, 0,
-                           "ngx_http_init_sticky_peer");
+
 
 	ngx_log_debug(NGX_LOG_DEBUG_HTTP, pc->log, 0, "[sticky/get_sticky_peer] get sticky peer, try: %ui, n_peers: %ui, no_fallback: %ui/%ui", pc->tries, iphp->rrp.peers->number, conf->no_fallback, iphp->no_fallback);
 
@@ -434,7 +431,7 @@ static char *ngx_http_sticky_set(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 	ngx_http_sticky_misc_text_pt text = NULL;
 	ngx_uint_t no_fallback = 0;
 
-    ngx_conf_log_error(NGX_LOG_INFO, cf->log, 0,
+    ngx_conf_log_error(NGX_LOG_INFO, cf, 0,
                            "ngx_http_sticky_set");
 
 	/* parse all elements */
